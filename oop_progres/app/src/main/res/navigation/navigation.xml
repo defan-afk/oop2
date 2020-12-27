@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/choose">
+    <fragment
+        android:id="@+id/list2"
+        android:name="com.example.oop_progres.fragments.guru_fragment.List"
+        android:label="Daftar Guru"
+        tools:layout="@layout/fragment_list2" >
+        <action
+            android:id="@+id/action_list2_to_addGuru"
+            app:destination="@id/addGuru" />
+        <action
+            android:id="@+id/action_list2_to_choose"
+            app:destination="@id/choose" />
+        <action
+            android:id="@+id/action_list2_to_updateGuru"
+            app:destination="@id/updateGuru" />
+    </fragment>
+    <fragment
+        android:id="@+id/addGuru"
+        android:name="com.example.oop_progres.fragments.guru_fragment.AddGuru"
+        android:label="Tambah Data Guru"
+        tools:layout="@layout/fragment_add_guru" >
+        <action
+            android:id="@+id/action_addGuru_to_list2"
+            app:destination="@id/list2" />
+    </fragment>
+    <fragment
+        android:id="@+id/choose"
+        android:name="com.example.oop_progres.fragments.Choose"
+        android:label="Pilih Data"
+        tools:layout="@layout/fragment_choose" >
+        <action
+            android:id="@+id/action_choose_to_list2"
+            app:destination="@id/list2" />
+        <action
+            android:id="@+id/action_choose_to_list_Siswa"
+            app:destination="@id/list_Siswa" />
+    </fragment>
+    <fragment
+        android:id="@+id/addSiswa"
+        android:name="com.example.oop_progres.fragments.AddSiswa"
+        android:label="Tambah Data Siswa"
+        tools:layout="@layout/fragment_add_siswa" />
+    <fragment
+        android:id="@+id/list_Siswa"
+        android:name="com.example.oop_progres.fragments.List_Siswa"
+        android:label="Daftar Siswa"
+        tools:layout="@layout/fragment_list__siswa" >
+        <action
+            android:id="@+id/action_list_Siswa_to_choose"
+            app:destination="@id/choose" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateGuru"
+        android:name="com.example.oop_progres.fragments.update.UpdateGuru"
+        android:label="Ubah Data Guru"
+        tools:layout="@layout/fragment_update_guru" >
+        <action
+            android:id="@+id/action_updateGuru_to_list2"
+            app:destination="@id/list2" />
+        <argument
+            android:name="currentGuru"
+            app:argType="com.example.oop_progres.model.Guru" />
+    </fragment>
+</navigation>
