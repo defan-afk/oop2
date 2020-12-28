@@ -20,6 +20,9 @@ class Choose : Fragment() {
         view.btn_guru.setOnClickListener {
             findNavController().navigate(R.id.action_choose_to_list2)
         }
+        view.btn_siswa.setOnClickListener {
+            findNavController().navigate(R.id.action_choose_to_list_Siswa)
+        }
         return view
     }
 

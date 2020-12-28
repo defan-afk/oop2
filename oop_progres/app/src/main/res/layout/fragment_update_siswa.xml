@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="24dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.siswa_fragment.AddSiswa">
+    tools:context="com.example.oop_progres.fragments.update.UpdateSiswa">
 
     <EditText
-        android:id="@+id/txt_nama_siswa"
+        android:id="@+id/update_nama_siswa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txt_alamat"
+        android:id="@+id/update_alamat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -30,16 +30,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_nama_siswa" />
+        app:layout_constraintTop_toBottomOf="@+id/update_nama_siswa" />
 
     <Button
-        android:id="@+id/btn_add_siswa"
+        android:id="@+id/btn_ubah1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tambah"
+        android:text="Ubah"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_alamat" />
+        app:layout_constraintTop_toBottomOf="@+id/update_alamat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
