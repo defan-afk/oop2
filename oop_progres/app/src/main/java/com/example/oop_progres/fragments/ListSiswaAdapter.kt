@@ -44,4 +44,5 @@ class ListSiswaAdapter: RecyclerView.Adapter<ListSiswaAdapter.SiswaViewHolder>()
         this.siswaList = siswa
         notifyDataSetChanged()
     }
+
 }

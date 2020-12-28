@@ -21,5 +21,4 @@ interface SiswaDao {
 
     @Query("SELECT * FROM tabel_siswa ORDER BY id ASC")
     fun readDataSiswa(): LiveData<List<Siswa>>
-
 }

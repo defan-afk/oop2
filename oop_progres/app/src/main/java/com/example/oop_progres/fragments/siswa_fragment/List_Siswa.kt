@@ -68,4 +68,5 @@ class List_Siswa : Fragment() {
         builder.setMessage("Apakah yakin akan menghapus semua data?")
         builder.create().show()
     }
+
 }

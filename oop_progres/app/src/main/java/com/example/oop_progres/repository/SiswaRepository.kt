@@ -21,4 +21,5 @@ class SiswaRepository(private val siswaDao: SiswaDao) {
     suspend fun deleteAllSiswa(){
         siswaDao.deleteAllSiswa()
     }
+
 }

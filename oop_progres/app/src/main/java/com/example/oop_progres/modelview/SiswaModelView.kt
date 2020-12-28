@@ -44,4 +44,5 @@ class SiswaModelView(application: Application): AndroidViewModel(application) {
             repository.deleteAllSiswa()
         }
     }
+
 }
