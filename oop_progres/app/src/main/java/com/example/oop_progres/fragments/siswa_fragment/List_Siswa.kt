@@ -1,4 +1,4 @@
-package com.example.oop_progres.fragments.guru_fragment
+package com.example.oop_progres.fragments.siswa_fragment
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -11,53 +11,53 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.oop_progres.R
 import com.example.oop_progres.fragments.ListGuruAdapter
+import com.example.oop_progres.fragments.ListSiswaAdapter
 import com.example.oop_progres.modelview.GuruModelView
+import com.example.oop_progres.modelview.SiswaModelView
 import kotlinx.android.synthetic.main.fragment_list2.view.*
+import kotlinx.android.synthetic.main.fragment_list__siswa.view.*
 
+class List_Siswa : Fragment() {
 
-class List : Fragment() {
-    private lateinit var mGuruModelView: GuruModelView
+    private lateinit var mSiswaModelView: SiswaModelView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_list2, container, false)
+        val view = inflater.inflate(R.layout.fragment_list__siswa, container, false)
 
-        val adapter = ListGuruAdapter()
-        val recyclerView = view.recycleView
-        recyclerView.adapter = adapter
+        val adapter1 = ListSiswaAdapter()
+        val recyclerView = view.recycleView1
+        recyclerView.adapter = adapter1
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-
-        mGuruModelView = ViewModelProvider(this).get(GuruModelView::class.java)
-        mGuruModelView.readAllData.observe(viewLifecycleOwner, Observer { guru ->
-            adapter.setData(guru)
+        mSiswaModelView = ViewModelProvider(this).get(SiswaModelView::class.java)
+        mSiswaModelView.readDataSiswa.observe(viewLifecycleOwner, Observer { siswa ->
+            adapter1.setDataSiswa(siswa)
         })
 
-
-        view.floatingActionButton.setOnClickListener {
-            findNavController().navigate(R.id.action_list2_to_addGuru)
+        view.floatingActionButton1.setOnClickListener {
+            findNavController().navigate(R.id.action_list_Siswa_to_addSiswa)
         }
         setHasOptionsMenu(true)
         return view
     }
-
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.delete_menu, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.menu_hapus){
-            deleteAllGuru()
+            deleteAllSiswa()
         }
         return super.onOptionsItemSelected(item)
     }
 
-    private fun deleteAllGuru() {
+    private fun deleteAllSiswa() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setPositiveButton("Yes") { _, _ ->
-            mGuruModelView.deleteAllGuru()
+            mSiswaModelView.deleteAllSiswa()
             Toast.makeText(
                 requireContext(),
                 "Berhasil Menghapus Semua Data",
@@ -68,4 +68,5 @@ class List : Fragment() {
         builder.setMessage("Apakah yakin akan menghapus semua data?")
         builder.create().show()
     }
+
 }

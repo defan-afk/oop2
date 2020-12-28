@@ -42,17 +42,27 @@
     </fragment>
     <fragment
         android:id="@+id/addSiswa"
-        android:name="com.example.oop_progres.fragments.AddSiswa"
+        android:name="com.example.oop_progres.fragments.siswa_fragment.AddSiswa"
         android:label="Tambah Data Siswa"
-        tools:layout="@layout/fragment_add_siswa" />
+        tools:layout="@layout/fragment_add_siswa" >
+        <action
+            android:id="@+id/action_addSiswa_to_list_Siswa"
+            app:destination="@id/list_Siswa" />
+    </fragment>
     <fragment
         android:id="@+id/list_Siswa"
-        android:name="com.example.oop_progres.fragments.List_Siswa"
+        android:name="com.example.oop_progres.fragments.siswa_fragment.List_Siswa"
         android:label="Daftar Siswa"
         tools:layout="@layout/fragment_list__siswa" >
         <action
             android:id="@+id/action_list_Siswa_to_choose"
             app:destination="@id/choose" />
+        <action
+            android:id="@+id/action_list_Siswa_to_addSiswa"
+            app:destination="@id/addSiswa" />
+        <action
+            android:id="@+id/action_list_Siswa_to_updateSiswa"
+            app:destination="@id/updateSiswa" />
     </fragment>
     <fragment
         android:id="@+id/updateGuru"
@@ -65,5 +75,17 @@
         <argument
             android:name="currentGuru"
             app:argType="com.example.oop_progres.model.Guru" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateSiswa"
+        android:name="com.example.oop_progres.fragments.update.UpdateSiswa"
+        android:label="Ubah Data Siswa"
+        tools:layout="@layout/fragment_update_siswa" >
+        <action
+            android:id="@+id/action_updateSiswa_to_list_Siswa"
+            app:destination="@id/list_Siswa" />
+        <argument
+            android:name="currentSiswa"
+            app:argType="com.example.oop_progres.model.Siswa" />
     </fragment>
 </navigation>
